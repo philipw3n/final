@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function disable_input(){
+                var button = document.getElementById("close")
+                if (button.checked){
+                    document.getElementById("txtName").disabled = false
+                    document.getElementById("txtPhone").disabled = false
+                    document.getElementById("txtEmail").disabled = false
+                    document.getElementById("bank").disabled = false
+                    document.getElementById("txtBukti").disabled = false
+                    document.getElementById("btnSubmit").disabled = false
+                }   else{
+                    document.getElementById("txtName").disabled = true
+                    document.getElementById("txtPhone").disabled = true
+                    document.getElementById("txtEmail").disabled = true
+                    document.getElementById("bank").disabled = true
+                    document.getElementById("txtBukti").disabled = true
+                    document.getElementById("btnSubmit").disabled = true
+                }
+            }
+
+            function disable_login_button(){
+                var name = document.getElementById("txtLoginName").value
+                var email = document.getElementById("txtLoginEmail").value
+
+                if (name == "" || email == ""){
+                    document.getElementById("buttonLogin").style.visibility = "hidden"
+                } else{
+                    document.getElementById("buttonLogin").style.visibility = "visible"
+                }
+            }
+
+            function welcome(){
+                var name = document.getElementById("txtLoginName").value
+                var email = document.getElementById("txtLoginEmail").value
+                alert("Welcome !\n"+name+"\nYour Email : "+email)
+            }
+
+            function display_payment(){
+                var name = document.getElementById("txtName").value
+                var phone = document.getElementById("txtPhone").value
+                var email = document.getElementById("txtEmail").value
+                var bank = document.getElementById("bank").value
+                var bukti = document.getElementById("txtBukti").value
+
+                alert("Thanks For Your Purchase!\nName : "+name+"\n")
+            }
+
+            function alert_checkbox(){
+                if (document.getElementById("close").checked){
+                    alert("You enabled the input box")
+                } else {
+                    alert("You disable the input box")
+                }
+            }
+        </script>
+    </head>
+    <body onload="disable_login_button()">
+        <div data-role="page" id="login">
+            <div data-role="header">
+                <div></div>
+            </div>
+            <div data-role="content">
+                <table style="background-color: azure; width: 70%;" align="center">
+                    <tr>
+                        <img src="img/header2.png" style="width: 100%; height: 200px;">
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <div class="row"><h1><b>"Berminat Menternak Kambing?"</b></h1></div>
+                                <div class="row"><h3 style="color: deepskyblue;">Ketahui... Bagaimana Cara Memulakan Penternakan Kambing Yang Betul Dengan Kos Yang Rendah! Tanpa Perlu Membuat Sebarang Pinjaman!.</h3></div>
+                                <div class="row">
+                                    <center>
+                                        <h2>Tips & Sample Percuma!</h2>
+                                        <font style="font-family: Arial, Helvetica, sans-serif; font-size: small;">Dapatkan sample percuma "ebook RahsaKambing" serta tips-tips menarik mengenal bidang penternakan kambing dari semasa ke semasa dengan melanggan newletter kami. Masukkan nama dan alamat email anda di bawah untuk melanggan</font>
+                                        <table align="center" style="width: 90%; border: 1px;">
+                                            <tr>
+                                                <td><h3>Nama Panggilan:</h3></td>
+                                                <td><input style="width: 90%;" type="text" id="txtLoginName" oninput="disable_login_button()"></td>
+                                                <td><h3>E-Mail:</h3></td>
+                                                <td><input type="text" style="width: 90%;" id="txtLoginEmail" oninput="disable_login_button()"></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" align="center">
+                                                    <a data-role="button" id="buttonLogin" onclick="welcome()" href="#page2">Berikan Saya Tip PERCUMA Tentang Penternakan Kambing SEKARANG!</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </center>
+                                </div>
+                            </center>
+                            <br>
+                            <div class="row" style="margin-left: 5%;"><left>Dari Meja Mohamand Farid Sulaiman</left></div>
+                            <div class="row" style="margin-left: 5%;"><left>Selasa, 15 Julai 2005</left></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div data-role="page" id="page2">
+            <div data-role="header">
+                <h1><b>Intro</b></h1>
+            </div>
+            <div data-role="content">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href = "#page2" onclick="disable_input()" >Intro</a></li>
+                        <li><a href = "#page3">Payment</a></li>
+                    </ul>
+                </div>
+                <div class="row" style="margin-top: 30px;"><img src="img/page2.jpeg"></div>
+                <div class="row">
+                    Banyak kisah-kisah kejayaan usahawan-usahawan tani ini dipaparkan, sama ada di akhbar mahupun TV. Kisah-kisah ini amat mengujakan kepada saya, kerana saya amat meminati bidang pertanian dan penternakan. Sememangnya, sudah lama saya menyimpan hasrat untuk menceburkan diri di dalam bidang pertanian dan juga penternakan ini. Tetapi, disebabkan saya bekerja makan gaji.. maka niat tersebut terpaksa dipendamkan.
+                    <br>
+                    <br>
+                    <center><h2>Hasrat Terbantut....!</h2></center>
+                    <br>
+                    <br>
+                    Ditambah lagi dengan kekurangan sumber maklumat tentang bagaimana hendak memulakan serta menceburkan diri di dalam projek pertanian & penternakan ini. Menyebabkan, hasrat saya untuk bergelar seorang usahawan tani yang berjaya terbenam
+                    <br>
+                    <br>
+                    Sehinggalah pada suatu hari, sewaktu saya pulang ke kampung di Melaka,<b>saya telah terserempak dengan seorang pakcik</b> yang menetap di kampung saya. Saya gelarkan dia pakcik H, sejak dulu lagi, saya memang tahu <b>pakcik H ini ada menternak kambing.</b> tapi pada waktu itu, saya tidak ambil peduli sangat.. maklumlah.. orang kampung bela kambing... biasalah kan?
+                    <br>
+                    <br>
+                    Dulu, pakcik H ini membela 5 ekor kambing.. tapi,<b> setelah 7 tahun berlalu, bilangan kambingnya telah mencecah 1,000 ekor. Pergh!! Saya memang betul-betul tidak sangka..</b> pakcik H yang dulu saya pandang hanyalah seorang "pakcik kampung yang biasa-biasa".. kini telah bertukar menjadi seorang penternak kambing yang sangat berjaya!.
+                    <br>
+                    <br>
+                    Perkara ini telah membuka minda dan fikiran saya untuk melihat bidang penternakan kambing ini dengan lebih luas & positif. <b>Saya mula mendekati pakcik H dan mula mempelajari serba sedikit mengenai selok belok penternakan kambing.</b> Alhamdulilah.. pakcik H tidak kedekut ilmu dan sudi berkongsi pengalaman beliau di dalam usaha menternak kambing.
+                    <br>
+                    <br>
+                    Saya sangat gembira dan bersyukur mengenali beliau, banyak perkara saya belajar dari beliau dan kini, saya menganggap beliau sebagai salah seorang mentor saya di dalam bidang penternakan kambing.
+                    <br>
+                    <br>
+                    Selepas beberapa pertemuan dengan pakcik H, saya mula mempertimbangkan dengan serius tentang hasrat saya yang ingin menjadi seorang usahawan agro yang berjaya sejak dulu lagi. Untuk itu, <b>saya mula mengiatkan usaha</b> saya mencari lebih banyak info serta ilmu tentang penternakan kambing ini dengan <b>membaca buku , menyertai kursus dan seminar</b> penternakan kambing anjuran badan-badan kerajaan dan juga swasta.Memulakan Langkah....!
+                    <br>
+                    <br>
+                    Setelah beberapa bulan mentelaah ilmu penternakan kambing, saya pun memulakan langkah pertama saya di dalam bidang penternakan kambing dengan bermodalkan RM7,000 hasil daripada wang simpanan saya. Dengan modal tersebut, saya mula membina kandang kambing dan juga membeli 5 ekor kambing betina dan seekor kambing jantan jamnapari..
+                    <br>
+                    <br>
+                    Alhamdulilah... berbekalkan ilmu yang saya perolehi dari buku, seminar serta tunjuk ajar dari pakcik H. Saya tidak banyak menghadapi masalah di dalam mengusahakan projek penternakan kambing ini. Dalam masa 4 bulan.. dari 6 ekor kambing, ternakan saya telah bertambah menjadi 10 ekor. Selepas hampir setahun mengusahakan penternakan kambing, bilangan ternakan saya sudah mencapai jumlah 20 ekor.
+                    <br>
+                    <br>
+                    Jika hendak diukurkan tahap kejayaan saya.. sememangnya.. perjalanan saya masih jauh. Tapi saya sangat optimis dan percaya , berbekalkan usaha yang gigih serta ilmu yang betul.. kita pasti akan BERJAYA!
+                    <br>
+                    <br>
+                    Melihatkan hasil ternakan kambing saya... membuatkan saya terfikir. Sudah pastinya, ada ramai lagi insan diluar sana yang mengalami nasib yang hampir sama dengan saya. Mereka minat untuk menceburkan diri di dalam bidang penternakan... tetapi malang , tidak mempunyai mentor serta tidak mempunyai sumber maklumat yang mencukupi menyebabkan , niat mereka untuk memulakan penternakan kambing terbantut. Mungkin anda adalah salah seorang daripada mereka?
+                    <br>
+                    <br>
+                    Untuk itu, saya telah mengambil inisiatif, dengan berusaha, mengumpulkan semula maklumat-maklumat yang pernah saya perolehi dulu dan menghimpunkannya, dan akhirnya, jadilah ia sebuah panduan yang lengkap tentang.. “Bagaimana memulakan penternakan kambing?”.
+                    <br>
+                    <br>
+                    Semua maklumat yang saya perolehi dari buku-buku, artikel-artikel, seminar-seminar dan juga serba sedikit dari pengalaman sendiri dan juga pengalaman-pengalaman daripada penternak lain.. kesemuanya telah saya himpunkan dan susunkan ia hingga menjadi sebuah ebook panduan yang lengkap yang saya namakan...
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page3" onload="alert_paymentPageWelcome()">
+            <div data-role="header"><h1><b>Payment</b></h1></div>
+            <div data-role="content">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href = "#page2" onclick="disable_input()">Intro</a></li>
+                        <li><a href = "#page3">Payment</a></li>
+                    </ul>
+                </div>
+                <table align="center" style="width: 75%; margin-top: 30px;">
+                    <tr>
+                        <td>
+                            Langkah 1 ) Sila login ke akaun Maybank2u / CIMBClciks / BankIslam anda dan lakukan "fund transfer" ke salah suatu akaun bank dibawah sebanyak RM47.
+                            <br>
+                            <br>
+                            <center>
+                                <table>
+                                    <tr>
+                                        <td>Maybank :</td>
+                                        <td>562021601450 - Extreme D Enterprise</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bank Islam :</td>
+                                        <td>12029020241421 - Mohd Suhaimy Abu Bakar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CIMS :</td>
+                                        <td>12180079689520 - Siti Noorhafezah Maarop</td>
+                                    </tr>
+                                </table>
+                            </center>
+                            <br>
+                            <br>
+                            <br>
+                            Langkah 2 ) Selepas itu, simpan resit transaksi yang anda terima dan sila Isikan borang pengesahkan bayaran dibawah.
+                            <br>
+                            <br>
+                            <table>
+                                <tr>
+                                    <td><input type="checkbox" id="close" onchange="disable_input(); alert_checkbox()"></td>
+                                    <td align="left" style="width: 90%;"><font style="font-size: small;">Ya! Saya telah membuat pembayaran. Sila hantarkan produk tersebut ke alamat saya seperti di bawah</font></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td>Nama :</td>
+                                    <td><input type="text" id="txtName"></td>
+                                </tr>
+                                <tr>
+                                    <td>Email :</td>
+                                    <td><input type="text" id="txtEmail"></td>
+                                </tr>
+                                <tr>
+                                    <td>Telefon :</td>
+                                    <td><input type="text" id="txtPhone"></td>
+                                </tr>
+                                <tr>
+                                    <td>Bank :</td>
+                                    <td>
+                                        <form>
+                                            <div data-role="fieldcontain">
+                                                <label for="bank">Bank</label>
+                                                <select name="bank" id="bank">
+                                                    <option value="maybank">Maybank</option>
+                                                    <option value="islam">Bank Islam</option>
+                                                    <option value="cimb">CIMB</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bukit Pembayran :</td>
+                                    <td><textarea id="txtBukti" cols="50" rows="10"></textarea></td>
+                                </tr>
+                                <tr style="width: 100%;">
+                                    <td></td>
+                                    <td><button id="btnSubmit">Hantar Maklumat Pembayaran</button></td>
+                                </tr>
+                            </table>
+                            <br>
+                            <br>
+                            Langkah 3 ) Kami akan menyemak maklumat bayaran anda terlebih dahulu dan <strong><u>ebbok tersebut akan dihantar ke email anda dalam masa 24 jam.</u></strong>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
